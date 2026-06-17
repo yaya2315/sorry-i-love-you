@@ -2,6 +2,8 @@
    CONFIGURACIÓN — RELLENA ESTO PARA QUE EL CORREO LLEGUE
    (instrucciones detalladas al final del mensaje del chat)
 ═══════════════════════════════════════════════════════════ */
+console.log('%c✅ script.js cargó correctamente 🐾', 'color:#C96B8A;font-weight:bold;');
+
 const EMAIL_CONFIG = {
   publicKey:  'L2g8ByGD0M3HyWWI4', // ✅ tu Public Key
   serviceId:  'service_a35xinh',   // ✅ tu Service ID
