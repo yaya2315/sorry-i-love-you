@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fde8f0" />
+  <meta name="description" content="Una disculpa hecha con el corazón." />
+  <title>Lo siento mucho 🐾</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="hearts-bg" id="heartsBg" aria-hidden="true"></div>
+
+  <div class="counter-wrap" id="counterWrap" aria-live="polite">
+    <span aria-hidden="true">🐾</span> <span id="clickCount">0</span> / 10
+  </div>
+
+  <!-- ░░ 1. TARJETA PRINCIPAL ░░ -->
+  <main class="card" id="mainCard">
+    <p class="label">Una disculpa de corazón</p>
+    <h1>Lo siento mucho,<br><em>mi amor.</em></h1>
+    <div class="divider" aria-hidden="true"></div>
+    <p class="message">
+      Sé que lo hice mal y eso es lo último que hubiese querido.<br>
+      Cada momento contigo es un regalo que aprecio mucho,<br>
+      y quiero saber si me perdonas<br>
+      porque te amo con toda el alma y el corazón. 💗
+    </p>
+    <p class="hint">✦ Psst… busca a Snoopy rondando por la pantalla ✦</p>
+  </main>
+
+  <!-- Snoopy que se asoma por los bordes (cambia de imagen en cada clic) -->
+  <div id="snoopy" class="snoopy-wrap" role="button" tabindex="0" aria-label="Toca a Snoopy">
+    <img id="snoopyImg" src="imagenes/snoopy.png" alt="Snoopy" />
+  </div>
+
+  <!-- ░░ 2. ESCENA FINAL (clic nº 10) ░░ -->
+  <section id="final-scene" aria-hidden="true">
+    <div id="snoopy-big">
+      <img src="imagenes/snoopy.png" alt="Snoopy abrazando un corazón" />
+    </div>
+    <div class="sign">
+      <p>¿ME PERDONAS? 🥺</p>
+    </div>
+    <div class="btns">
+      <button class="btn btn-yes" id="btnYes">Sí, te perdono 💗</button>
+      <button class="btn btn-no"  id="btnNo">No</button>
+    </div>
+  </section>
+
+  <!-- ░░ 3. PANTALLA "SÍ" ░░ -->
+  <section id="yes-screen" aria-hidden="true">
+    <span class="big-heart" aria-hidden="true">💖</span>
+    <h2>¡Gracias, mi amor!</h2>
+    <p>Prometo ser mejor cada día.<br>Te quiero demasiado. 🐾✨</p>
+    <button class="btn btn-yes btn-gift" id="btnGoGifts">Elige tu regalito 🎁</button>
+  </section>
+
+  <!-- ░░ 4. PANTALLA DE REGALITOS ░░ -->
+  <section id="gift-screen" aria-hidden="true">
+    <div class="gift-head">
+      <p class="label">Porque te lo mereces</p>
+      <h2>Elige tu regalito <span aria-hidden="true">💝</span></h2>
+      <p class="gift-sub">Por portarme mal te debo algo lindo. Escoge el que más quieras… o el que más antojo te dé 🥰</p>
+    </div>
+
+    <div class="gift-grid" id="giftGrid"><!-- tarjetas generadas por JS --></div>
+
+    <div class="gift-actions">
+      <button class="btn btn-yes" id="btnConfirmGift" disabled>Confirmar mi regalito 💌</button>
+      <p class="gift-pick-hint" id="giftPickHint">Toca un regalito para elegirlo</p>
+    </div>
+  </section>
+
+  <!-- ░░ 5. CONFIRMACIÓN DE ENVÍO ░░ -->
+  <section id="sent-screen" aria-hidden="true">
+    <div id="sent-snoopy"><img src="imagenes/snoopy3.png" alt="Snoopy feliz con corazones" /></div>
+    <h2>¡Pedido enviado! <span aria-hidden="true">💌</span></h2>
+    <p id="sentMsg">Le avisé a tu personita favorita que quieres tu regalito.</p>
+    <div class="sent-card" id="sentCard"></div>
+    <p class="sent-foot" id="sentFoot">Pronto te lo cumple. Te ama un montón. 🐾💗</p>
+  </section>
+
+  <!-- EmailJS (envío de correo sin backend) -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
